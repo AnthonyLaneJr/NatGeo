@@ -1,0 +1,87 @@
+html{
+    font-size: 62.5%;
+}
+
+.table{
+    border: 1px solid black;
+    font-size: 1.6rem;
+}
+
+.table tr:nth-child(even){
+background-color: gray;
+border: 1px solid black;
+}
+
+/* easy way to add neat mouse hover effetcs */
+.table th:hover,td:hover{
+    background-color: black;
+    color: white;
+}
+
+.table td{
+border: 1px solid black;
+}
+
+/* Mobile View */
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-child{
+    background-color: gray;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 2rem;
+    text-align: center;
+}
+.flex-child:hover{
+    background-color: cyan;
+}
+/* Desktop View  sets the values for all attributes to occur when the view px count exceeds minimum value */
+@media(min-width:768px){
+    .flex-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* grid */
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+div.grid-child{
+    font-size: 2rem;
+    background-color: gray;
+    transition: .5 ease-out;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+div.grid-child:hover{
+    background-position: left;
+    background-color: pink;
+}
+
+button.wow{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem 1rem;
+    color: black;
+    background-color: gray;
+    background: linear-gradient(180%, 50% gray, 50% pink);
+    transition: all ease 1s;
+    ;
+}
+button.wow:hover{
+    box-shadow: inset 200px 0 0 0 pink;
+    color: black;
+}
