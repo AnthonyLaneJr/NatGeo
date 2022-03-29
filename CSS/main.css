@@ -44,6 +44,7 @@ p.read-btn{
     font-weight: 700;
 }
 
+
 /*  Nav  */
 .navigation-bar{
     display: flex;
@@ -153,10 +154,14 @@ body{
 }
 
 /* Main News */
+section{
+    padding-bottom: 10vh;
+}
 .main-news{
     color: white;
     position: relative;/*parent should be relative*/
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .main-news-img img{
@@ -187,10 +192,11 @@ body{
 
 .secondary-news{
     position: relative;
+    cursor: pointer;
 }
 .secondary-news-img{
     height: 400px;
-    margin: bottom 0;
+    margin: bottom 5px;
 }
 .secondary-news-text{
     margin-top: -50px;
@@ -204,6 +210,7 @@ body{
 }
 .secondary-news-text h3{
     color: gray;
+    padding-top: 10px;
 }
 .secondary-news-text h3:hover{
     text-decoration: underline;
@@ -211,21 +218,51 @@ body{
 }
 /* Today's picks */
 
-.pick-item{
+.picks-item{
     display: grid;
     grid-template-columns: 1fr 4fr;
     margin-top: 20px;
     column-gap: 30px;
 }
-.pick-item img{
+.picks-item:hover{
+    cursor: pointer;
+}
+h2.todays-picks{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 700;
+    font-size: 32px;
+    padding-top: 20px;
+}
+.picks-item img{
     width: 100px;
     height: 100px;
 }
-.pick-text p{
+.picks-text p{
     color: white;
     font-weight: 700;
     line-height: 1.5;
 }
-.pick-text p:hover{
+.picks-text p:hover{
     text-decoration: underline;
+}
+div.see-more{
+    display: flex;
+    justify-content: center;
+
+}
+p.see-more{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 12px;
+    border-bottom:2px solid var(--primary);
+    background-size: 100% 200%;
+    background-image:linear-gradient(to bottom, black 50%, var(--primary) 50%);
+    transition: background-position .1s ease-in-out, color .1s ease-in-out;
+}
+p.see-more:hover{
+    background-position: 0 100%;
+    color:black;
 }
