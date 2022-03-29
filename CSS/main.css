@@ -7,6 +7,11 @@ body{
     font-family: 'Roboto', sans-serif;
     color: white;
 }
+main{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
 p{
     line-height: 2;
 }
@@ -16,8 +21,23 @@ img{
 a{
     text-decoration: none;
 }
+h3{
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: white;
+}
+h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 /*  Utilites  */
+.todays-picks-container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
 p.read-btn{
     text-transform: uppercase;
     font-size: 13px;
@@ -57,21 +77,28 @@ p.read-btn{
     color: rgba(71, 59, 59, 0.76);
 }
 .link-subscribe{
-    text-transform: uppercase;
-    font-size: 13px;
-    color: white;
-    background-color: black;
-    font-weight: 700;
-    letter-spacing: 3px;
-    padding: 18px;
-    transition: 1s;
-}
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        background-image: linear-gradient(to left, black 50%, var(--primary) 50%);
+        transition: background-position .2s ease-in-out, color .2s ease-in-out;
+        color:white;
+        padding:1rem;
+    }  
 .link-subscribe:hover{
-    box-shadow: inset 300px  0 0 var(--primary);
-    color: black;
-    transition: 1.5s;
-
+    background-position: 0% 0;
+    color:black;
 }
+
+/* Optional way to create changes
+
+    .subs-word:hover::before{
+    content: "This is a fancy orange box.";
+  background-color: #FFBA10;
+  border-color: black;
+  border-style: dotted;
+
+*/
+
 .link-arrows{
     color: black;
     margin-right: 20px;
@@ -99,17 +126,18 @@ header p{
     letter-spacing: 1px;
 }
 header span{
-    z-index: 1;
-    display:inline-block block;
-    text-decoration: underline;
-    text-decoration-color: var(--primary);
-    transition: 1s;
+    border-bottom:2px solid var(--primary);
+    background-size: 100% 200%;
+    background-image:linear-gradient(to bottom, black 50%, var(--primary) 50%);
+    transition: background-position .1s ease-in-out, color .1s ease-in-out;
 }
+
 header span:hover{
-    background-color: var(--primary);
-    color: black;
-    text-decoration-color: black;
+    background-position: 0 100%;
+    color:black;
+    cursor:pointer;
 }
+
 div.border{
     border-bottom: 1px solid var(--primary);
     border-bottom-width: 4.5px;
@@ -122,4 +150,82 @@ div.border{
 body{
     background-color: black;
     font-family: 'Roboto', sans-serif;
+}
+
+/* Main News */
+.main-news{
+    color: white;
+    position: relative;/*parent should be relative*/
+    margin-bottom: 20px;
+}
+
+.main-news-img img{
+    height: 400px;
+}
+
+.main-news-text{
+    position: absolute;/*child should be absolute*/
+    top: 120px;
+    left: 20px;
+}
+
+.main-news-text p.title{
+    color: white;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.main-news-text p.read-btn{
+    color: white;
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Secondary News */
+
+.secondary-news{
+    position: relative;
+}
+.secondary-news-img{
+    height: 400px;
+    margin: bottom 0;
+}
+.secondary-news-text{
+    margin-top: -50px;
+    padding: 5px;
+    padding-left: 20px;
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    font-weight: 700;
+    word-spacing: 1px;
+}
+.secondary-news-text h3{
+    color: gray;
+}
+.secondary-news-text h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* Today's picks */
+
+.pick-item{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-top: 20px;
+    column-gap: 30px;
+}
+.pick-item img{
+    width: 100px;
+    height: 100px;
+}
+.pick-text p{
+    color: white;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.pick-text p:hover{
+    text-decoration: underline;
 }
