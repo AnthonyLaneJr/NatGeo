@@ -7,7 +7,7 @@ body{
     font-family: 'Roboto', sans-serif;
     color: white;
 }
-main{
+.container{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -42,6 +42,15 @@ p.read-btn{
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
+}
+@media(min-width:768px){
+    .container{
+        width: 80%;
+    }
+    .flex-container{
+        display: flex;
+        flex-direction: row-reverse;
+    }
 }
 
 
@@ -108,6 +117,45 @@ p.read-btn{
 .link-arrows:hover{
     color: rgba(71, 59, 59, 0.76);
 }
+
+@media(min-width:768px){
+    .menu{
+        flex-basis:400px
+    }
+    .ng-logo,.link-search,.link-renew,.link-menu{
+        display: block;
+    }
+    .ng-logo-border{
+        display: none;
+    }
+    .ng-logo{
+        width:100px;
+        margin-left: 20px;
+    }
+    .link-search{
+        color: black;
+    }
+    .link-renew{
+        border-bottom:2px solid var(--primary);
+        background-size: 100% 200%;
+        background-image:linear-gradient(to bottom, white 50%, var(--primary) 50%);
+        transition: background-position .1s ease-in-out, color .1s ease-in-out;
+        color: black;
+    }
+    .link-renew:hover{
+        background-position: 0 100%;
+        color:black;
+        cursor:pointer;
+    }
+    .link-menu{
+        color: black;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 3px;
+    }
+}
+
 /*  Header  */
 
 header h1{
@@ -195,11 +243,10 @@ section{
     cursor: pointer;
 }
 .secondary-news-img{
-    height: 400px;
-    margin: bottom 5px;
+    margin-bottom: 5px;
 }
 .secondary-news-text{
-    margin-top: -50px;
+    margin-top: -10px;
     padding: 5px;
     padding-left: 20px;
     color: black;
@@ -215,6 +262,24 @@ section{
 .secondary-news-text h3:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+@media(min-width:768px){
+    div.secondary-news-container{
+        display: flex;
+        justify-content: space-between;
+        width: 35rem;
+    }
+    .secondary-news{
+        width:calc(50% - 1rem);
+        height: 25rem;
+    }
+    .secondary-news-img img{
+        width:100%;
+        height: 12rem;
+    }
+    .main-news{
+        width:100%;
+    }
 }
 /* Today's picks */
 
